@@ -13,8 +13,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({ origin: '*' }));
 
-
 app.use('/', require('./api/influxdb'));
+app.use('/', require('./api/scores'));
 
 app.listen(8080);
 
