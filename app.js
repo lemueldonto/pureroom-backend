@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({ origin: '*' }));
 
 
-app.use('/influx', require('./api/influxdb'));
+app.use('/', require('./api/influxdb'));
 
 app.listen(8080);
 

@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { InfluxDB, FluxTableMetaData } = require('@influxdata/influxdb-client');
+const { InfluxDB }                    = require('@influxdata/influxdb-client');
 const { influx: { url, token, org } } = require('../env');
 const { from, map, take }             = require('rxjs');
 
@@ -33,11 +33,9 @@ const makeHandker = (measurement) => (req, res) => {
         });
 };
 
-// GET /weather/humidity
-// GET /weather/co2
-// GET /weather/temperature
-for (const measure of [ 'humidity', 'co2', 'temperature' ]) {
-    router.get('/weather/' + measure, makeHandker(measure));
-}
+// GET /scoring
+router.get('/scores', (req, res) => {
+    res.send([]);
+});
 
 module.exports = router;
