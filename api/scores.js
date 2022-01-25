@@ -35,7 +35,7 @@ const makeHandker = (measurement) => (req, res) => {
 
 // GET /scoring
 router.get('/scores', (req, res) => {
-    res.send([]);
+    res.send([ { value: 0, time: Date.now() }]);
 });
 
 module.exports = router;
