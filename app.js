@@ -17,6 +17,6 @@ app.use('/', require('./api/influxdb'));
 app.use('/', require('./api/scores'));
 
 app.listen(8080);
-
+console.log(`PureRoom Backend listening on port 8080`)
 
 module.exports = app;
